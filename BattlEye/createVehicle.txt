@@ -27,7 +27,7 @@
 
 // Buildings & objects (128-char limit between quotes)
 
-5 "^Land_" !"^Land_(BakedBeans|BarrelEmpty|BottlePlastic|Can(ister(Fuel|Oil))?|CashDesk|Ground_sheet|Money|Sleeping_bag|Suitcase|TentDome)_" !"^Land_(Rope)_" !"_(dam|ruins)_F$"
+5 "^Land_" !"^Land_(BakedBeans|BarrelEmpty|BottlePlastic|Can(ister(Fuel|Oil))?|CashDesk|Ground_sheet|Money|Sleeping_bag|Suitcase|TentDome)_" !"^Land_(Rope)_" !"_(dam|ruins)_F$" !"^Land_(WaterPurificationTablets|VitaminBottle|PowderedMilk|PainKillers)_F"
 
 // Game logic (comment these if it causes problems with some addons)
 
