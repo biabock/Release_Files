@@ -95,6 +95,7 @@ CREATE TABLE IF NOT EXISTS `PlayerInfo` (
   `BankMoney` FLOAT NOT NULL DEFAULT 0,
   `Bounty` INT UNSIGNED NOT NULL DEFAULT 0,
   `BountyKills` VARCHAR(8192) NOT NULL DEFAULT '[]',
+  `SupporterLevel` INT(2) UNSIGNED NOT NULL DEFAULT 0,
   PRIMARY KEY (`UID`))
 ENGINE = InnoDB;
 
@@ -152,6 +153,8 @@ CREATE TABLE IF NOT EXISTS `PlayerSave` (
   `AssignedItems` VARCHAR(512) NOT NULL DEFAULT '[]',
   `LoadedMagazines` VARCHAR(1024) NOT NULL DEFAULT '[]',
   `WastelandItems` VARCHAR(1024) NOT NULL DEFAULT '[]',
+  `UniformTexture` VARCHAR(4096) NOT NULL DEFAULT '\"\"',
+  `BackpackTexture` VARCHAR(4096) NOT NULL DEFAULT '\"\"',
   INDEX `fk_PlayerSave_ServerMap_idx` (`MapID` ASC),
   INDEX `fk_PlayerSave_ServerInstance_idx` (`LastServerID` ASC),
   UNIQUE INDEX `idx_PlayerSave_uniquePlayerMap` (`PlayerUID` ASC, `MapID` ASC),
