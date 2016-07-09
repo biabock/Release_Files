@@ -7,3 +7,10 @@
 // config.sqf, admins.sqf, and serverRules.sqf are already loaded automatically
 
 execVM (externalConfigFolder + "\bannedNames.sqf");
+
+(createTrigger ["EmptyDetector", [0,0,0]]) setTriggerStatements
+[
+    "!triggerActivated thisTrigger", 
+    "thisTrigger setTriggerTimeout [5,5,5,false]",
+    "{if (markerShape _x == 'POLYLINE') then {deleteMarker _x}} forEach allMapMarkers"
+];
