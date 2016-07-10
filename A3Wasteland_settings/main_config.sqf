@@ -79,6 +79,8 @@ A3W_objectLifetime = 3*24;         // Maximum lifetime in hours for saved object
 A3W_vehicleLifetime = 0;           // Maximum lifetime in hours for saved vehicles across server restarts, regardless of usage (0 = no time limit)
 A3W_vehicleMaxUnusedTime = 3*24;   // Maximum parking time in hours after which unused saved vehicles will be marked for deletion (0 = no time limit)
 A3W_serverSavingInterval = 1*60;   // Interval in seconds between automatic vehicle & object saves; should be kept at 1 min for profileNamespace and iniDB, while for extDB it can be relaxed to 3-5 mins
+A3W_mineSaving = 1;                // Save placed mines between server restarts (0 = no, 1 = yes)
+A3W_mineLifetime = 2*24;           // Maximum lifetime in hours for saved mines across server restarts (0 = no time limit)
 A3W_privateStorage = 1;            // Enable persistent private storage locations across the map (0 = no, 1 = yes)
 A3W_privateParking = 1;            // If vehicleSaving = 1 and savingMethod = "extDB" or "sock", enable persistent private parking locations across the map (0 = no, 1 = yes)
 A3W_privateParkingLimit = 2;       // Maximum amount of vehicles allowed in private parking (0 = no limit)
@@ -108,9 +110,9 @@ A3W_hcPrefix = "A3W_HC";           // Prefix of the headless client unit names i
 A3W_hcObjCaching = 1;              // Enable headless client object caching (0 = no, 1 = yes)
 A3W_hcObjCachingID = 1;            // ID of the headless client in charge of object caching (1 or 2)
 A3W_hcObjCleanup = 1;              // Enable headless client server cleanup (0 = no, 1 = yes)
-A3W_hcObjCleanupID = 2;            // ID of the headless client in charge of object saving (1 or 2)
+A3W_hcObjCleanupID = 1;            // ID of the headless client in charge of object saving (1 or 2)
 A3W_hcObjSaving = 0;               // Enable headless client vehicle & object saving (0 = no, 1 = yes)
-A3W_hcObjSavingID = 2;             // ID of the headless client in charge of object saving (1 or 2)
+A3W_hcObjSavingID = 1;             // ID of the headless client in charge of object saving (1 or 2)
 
 // HEADLESS CLIENT NOTES:
 // The IDs of HCs are assigned according to the order they connect to the server. The first HC to connect will have ID 1, and the second one will have ID 2.
@@ -169,8 +171,8 @@ MainMissions =
 	["mission_APC", 1],
 	["mission_MBT", 1],
 	["mission_LightArmVeh", 1],
-	["mission_ArmedHeli", 1]
-	//["mission_AbandonedJet", 0.5],
+	["mission_ArmedHeli", 1],
+	["mission_AbandonedJet", 0.3]
 	//["mission_CivHeli", 1]
 ];
 
@@ -178,24 +180,18 @@ SideMissions =
 [
 	["mission_HostileHelicopter", 0.5],
 	//["mission_MiniConvoy", 1],
-	["mission_SunkenSupplies", 1],
+	["mission_SunkenSupplies", 0.5],
 	["mission_TownInvasion", 1],
-	//["mission_AirWreck", 1],
-	//["mission_WepCache", 1],
+	["mission_AirWreck", 1],
+	["mission_WepCache", 1],
 	["mission_Outpost", 1],
-	["mission_Truck", 1],
-	//["mission_Roadblock", 1],
-	["mission_HostileJet", 0.5],
-	//["mission_Sniper", 1],
-	["mission_Smugglers", 1],
-	["mission_drugsRunners", 1],
-	["mission_GeoCache", 1]
+	["mission_Truck", 1]
 ];
 
 MoneyMissions =
 [
 	["mission_MoneyShipment", 1],
 	["mission_SunkenTreasure", 0.5],
-	["mission_militaryPatrol", 1],
-	["mission_altisPatrol", 1]
+	["mission_MoneyShipment2", 1],
+	["mission_MoneyShipment3", 1]
 ];
