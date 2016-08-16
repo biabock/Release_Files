@@ -75,7 +75,7 @@ A3W_staticWeaponSaving = 1;        // Save locked static weapons and their magaz
 A3W_warchestSaving = 1;            // Save warchest objects deployed by players between server restarts (0 = no, 1 = yes)
 A3W_warchestMoneySaving = 1;       // Save warchest team money between server restarts (0 = no, 1 = yes)
 A3W_spawnBeaconSaving = 1;         // Save spawn beacons between server restarts (0 = no, 1 = yes)
-A3W_objectLifetime = 2*24;         // Maximum lifetime in hours for saved objects (baseparts, crates, etc. except vehicles) across server restarts (0 = no time limit)
+A3W_objectLifetime = 3*24;         // Maximum lifetime in hours for saved objects (baseparts, crates, etc. except vehicles) across server restarts (0 = no time limit)
 A3W_vehicleLifetime = 0;           // Maximum lifetime in hours for saved vehicles across server restarts, regardless of usage (0 = no time limit)
 A3W_vehicleMaxUnusedTime = 2*24;   // Maximum parking time in hours after which unused saved vehicles will be marked for deletion (0 = no time limit)
 A3W_serverSavingInterval = 3*60;   // Interval in seconds between automatic vehicle & object saves; should be kept at 1 min for profileNamespace and iniDB, while for extDB it can be relaxed to 3-5 mins
@@ -162,33 +162,28 @@ A3W_moneyMissionTimeout = 60*60;   // Time in seconds that a Money Mission will 
 MainMissions =
 [
 	// Mission filename, weight
-	//["mission_ArmedDiversquad", 1],
-	["mission_Coastal_Convoy", 1],
-	//["mission_Convoy", 1],
-	//["mission_Hackers", 0.1],
+	["mission_AbandonedJet", 0.5],
+	["mission_AH", 0.5],
+	["mission_APC", 1],
+	["mission_ArmedHeli", 1],
 	["mission_HostileHeliFormation", 0.5],
 	["mission_HostileJetFormation", 0.5],
-	["mission_APC", 1],
-	["mission_MBT", 1.5],
+	["mission_Jaws", 0.2],
 	["mission_LightArmVeh", 1],
-	["mission_ArmedHeli", 1],
-	["mission_AbandonedJet", 0.5]
-	//["mission_CivHeli", 1]
+	["mission_MBT", 1.5]
 ];
 
 SideMissions =
 [
-	["mission_HostileHelicopter", 0.5],
-	//["mission_MiniConvoy", 1],
-	["mission_SunkenSupplies", 0.5],
-	["mission_SunkenTreasure", 0.5],
-	["mission_TownInvasion", 1],
 	["mission_AirWreck", 0.5],
-	//["mission_WepCache", 1],
+	["mission_HostageRescue", 1],
+	["mission_HostileHelicopter", 0.5],
+	["mission_isis", 1],
 	["mission_Outpost", 1],
-	//["mission_drugsRunners", 1],
+	["mission_Roadblock", 1],
 	["mission_Smugglers", 1],
-	["mission_Truck", 1]
+	["mission_SunkenTreasure", 1],
+	["mission_drugsrunners", 1]
 ];
 
 MoneyMissions =
